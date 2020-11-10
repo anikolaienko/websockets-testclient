@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebSockets Test Client</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <section>
+            <form class="border" onsubmit="connectToWS(event)">
+                <h5>Connect</h5>
+                <fieldset>
+                    <label for="ws-url">URL:</label>
+                    <input type="url" id="ws-url" name="ws-url">
+                    <button type="submit">Connect</button>
+                </fieldset>
+                <fieldset>
+                    <a class="btn" data-toggle="collapse" href="#collapseHeaders" role="button" aria-expanded="true" aria-controls="collapseExample">
+                        Headers:
+                    </a>
+                    <div class="collapse show" id="collapseHeaders">
+                        <button type="button" id="add-header" onclick="addHeader(event)">Add header</button>
+
+                        <div id="headers-list"></div>
+                    </div>
+                    
+                </fieldset>
+            </form>
+        </section>
+
+        <section>
+            <form class="border" onsubmit="sendMsg(event)">
+                <h5>Send message</h5>
+                <fieldset>
+                    <textarea col="4" id="ws-msg" name="ws-msg"></textarea>
+                </fieldset>
+                <button type="submit">Send</button>
+                <span>[Ctrl + Enter]</span>
+            </form>
+        </section>
+
+        <section>
+            <form class="border" onsubmit="sendMsg(event)">
+                <h5>Message log:</h5>
+                <button type="button">Clear</button>
+                <fieldset>
+                    <textarea col="4" id="ws-msg" name="ws-msg"></textarea>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
